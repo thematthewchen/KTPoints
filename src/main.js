@@ -7,6 +7,8 @@ import * as firebase from 'firebase/app';
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
+import 'vue-googlemaps/dist/vue-googlemaps.css'
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 // import bulma and custom styles
 // This file opens up 
@@ -34,11 +36,22 @@ const auth = firebase.auth();
 const storage = firebase.storage();
 const fbOperation = firebase.firestore;
 
+Vue.use(VueGoogleMaps, {
+  load: {
+    // Google API key
+    key: '',
+    // Enable more Google Maps libraries here
+    libraries: "places"
+  }
+});
+
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
+
 
 export {
   db,
