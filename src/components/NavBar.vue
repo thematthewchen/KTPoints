@@ -43,6 +43,9 @@
             <a href="https://forms.gle/AeGywrUiu4Qqt2zi8" target="_blank" class="navbar-item">
               Report an issue
             </a>
+            <router-link :to="this.ktphriends" class="navbar-item">
+              Find KTPhriends
+            </router-link>
             <hr v-if="this.$store.state.userData.uniqname !== undefined" class="navbar-divider">
             <a v-if="this.$store.state.userData.uniqname !== undefined" v-on:click="signOut()" class="navbar-item">
               Sign out
@@ -117,6 +120,9 @@ export default {
         return '/'
       }
       return "/users/" + this.$store.state.userData.uniqname
+    },
+    ktphriends: function(){
+      return '/KTPhriends/'
     }
   },
   methods: {

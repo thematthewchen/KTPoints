@@ -8,6 +8,7 @@ import User from './views/User.vue'
 import EventAdd from './views/EventAdd.vue'
 import EventSingle from './views/EventSingle.vue'
 import AdminTools from './views/AdminTools.vue'
+import KTPhriends from './views/KTPhriends.vue'
 import store from '@/store.js'
 import { auth } from '@/main.js'
 
@@ -63,6 +64,11 @@ const router = new Router({
       path: '/admintools',
       name: 'admintools',
       component: AdminTools
+    },
+    {
+      path: '/KTPhriends',
+      name: 'KTPhriends',
+      component: KTPhriends
     },
   ]
 })
